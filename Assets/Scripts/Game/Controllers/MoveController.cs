@@ -1,18 +1,37 @@
+using System;
 using Entities;
 using UnityEngine;
+using Zenject;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class MoveController
+    public sealed class MoveController: IInitializable, IDisposable
     {
         private readonly LevelMap _levelMap;
-
-        public MoveController(LevelMap levelMap)
+        private readonly IEventBus _eventBus;
+        public MoveController(LevelMap levelMap, IEventBus eventBus)
         {
             _levelMap = levelMap;
+            _eventBus = eventBus;
         }
-        
-        public void Move(IEntity entity, Vector2Int direction)
+
+        void IDisposable.Dispose()
+        {
+            _eventBus.Unsubscribe<MoveHandler>(Move);
+        }
+
+        void IInitializable.Initialize()
+        {
+            _eventBus.Subscribe<MoveHandler>(Move);
+        }
+
+        private void Move(MoveHandler handler)
+        {
+            Move(handler.Player, handler.Direction);
+            _eventBus.RaiseEvent(new StrengthHandler(handler.Player, 1));
+        }
+
+        private void Move(IEntity entity, Vector2Int direction)
         {
             var coordinates = entity.Get<CoordinatesComponent>();
             var targetCoordinates = coordinates.Value + direction;

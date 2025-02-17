@@ -9,18 +9,17 @@ namespace Lessons.Lesson19_EventBus
     {
         private readonly KeyboardInput _input;
         private readonly IEntity _player;
+        private readonly IEventBus _eventBus;
 
-        private readonly ApplyDirectionController _applyDirectionController;
 
         public PlayerController(
-            KeyboardInput input, 
-            ApplyDirectionController applyDirectionController, 
+            KeyboardInput input,
+            IEventBus eventBus,
             PlayerService playerService)
         {
             _input = input;
             _player = playerService.Player;
-            
-            _applyDirectionController = applyDirectionController;
+            _eventBus = eventBus;
         }
         
         void IInitializable.Initialize()
@@ -35,7 +34,7 @@ namespace Lessons.Lesson19_EventBus
 
         private void OnMovePreformed(Vector2Int direction)
         {
-            _applyDirectionController.ApplyDirection(_player, direction);
+            _eventBus.RaiseEvent(new ApplyDirectionHandler(_player, direction));
         }
     }
 }

@@ -85,6 +85,8 @@
     <Compile Include="Assets\Scripts\Game\Controllers\MoveController.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Model\Life.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\EnemyEntity.cs" />
+    <Compile Include="Assets\Scripts\EventBus\EventBus.cs" />
+    <Compile Include="Assets\Scripts\Game\Controllers\StatsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Game.asmdef" />

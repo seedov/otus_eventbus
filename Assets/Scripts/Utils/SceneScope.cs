@@ -12,6 +12,24 @@ namespace Lessons.Lesson19_EventBus
             ConfigureControllers();
 
             Container.Bind<EntityInstaller>().FromComponentInHierarchy().AsSingle();
+
+            ConfigureZenjectSignalBus();
+
+        }
+        private void ConfigureSignalBus()
+        {
+            Container.BindInterfacesTo<EventBus>().AsSingle();
+        }
+        private void ConfigureZenjectSignalBus()
+        {
+            Container.BindInterfacesTo<ZenjectEventBus>().AsSingle();
+            SignalBusInstaller.Install(Container);
+            Container.DeclareSignal<ApplyDirectionHandler>();
+            Container.DeclareSignal<MoveHandler>();
+            Container.DeclareSignal<AttackHandler>();
+            Container.DeclareSignal<DealDamageHandler>();
+            Container.DeclareSignal<DestroyHandler>();
+            Container.DeclareSignal<StrengthHandler>();
         }
 
         private void ConfigureLevel()
@@ -30,11 +48,12 @@ namespace Lessons.Lesson19_EventBus
 
         private void ConfigureControllers()
         {
-            Container.Bind<ApplyDirectionController>().AsSingle();
-            Container.Bind<AttackController>().AsSingle();
-            Container.Bind<DealDamageController>().AsSingle();
-            Container.Bind<DestroyController>().AsSingle();
-            Container.Bind<MoveController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ApplyDirectionController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AttackController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DealDamageController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DestroyController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MoveController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StatsController>().AsSingle();
         }
     }
 }

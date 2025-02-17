@@ -1,22 +1,40 @@
+using System;
 using Entities;
+using Zenject;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class AttackController
+    public sealed class AttackController :IInitializable, IDisposable
     {
-        private readonly DealDamageController _dealDamageController;
+        private IEventBus _eventBus;
 
-        public AttackController(DealDamageController dealDamageController)
+        public AttackController( IEventBus eventBus)
         {
-            _dealDamageController = dealDamageController;
+            _eventBus = eventBus;
         }
-        
-        public void Attack(IEntity entity, IEntity target)
+
+        private void Attack(AttackHandler handler)
+        {
+            Attack(handler.Player, handler.Target);
+        }
+
+        private void Attack(IEntity entity, IEntity target)
         {
             if (entity.TryGet(out StatsComponent stats))
             {
-                _dealDamageController.DealDamage(target, stats.Strength);
+                _eventBus.RaiseEvent(new DealDamageHandler(target, stats.Strength));
+                _eventBus.RaiseEvent(new StrengthHandler(entity, -1));
             }
+        }
+
+        void IInitializable.Initialize()
+        {
+            _eventBus.Subscribe<AttackHandler>(Attack);
+        }
+
+        void IDisposable.Dispose()
+        {
+            _eventBus.Unsubscribe<AttackHandler>(Attack);
         }
     }
 }
