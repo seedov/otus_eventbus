@@ -57,17 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\InitSystemStub.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\CommonSystemStub.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\SystemStub.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Utils\Reference.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\UpdateSystemStub.cs" />
     <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\InjectStub1.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\InjectStub2.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\ContextTests.cs" />
     <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\DisposeSystemStub.cs" />
     <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\InjectStub3.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\DisableSystemStub.cs" />
     <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\EnableSystemStub.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\InjectStub2.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\SystemStub.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\ContextTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\CommonSystemStub.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\DisableSystemStub.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Utils\Reference.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Context\Tests\Stubs\UpdateSystemStub.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Atomic\Context\Tests\Atomic.Contexts.Tests.asmdef" />

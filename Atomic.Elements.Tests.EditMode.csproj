@@ -56,30 +56,30 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveDictionaryTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveListTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveSortedListTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Events\EventTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Actions\ActionGroupTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Actions\ActionTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveHashSetTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\FloatSumExpressionTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\IntSumExpressionTests.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\OrExpressionTests.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\CycleTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\StopwatchTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveArrayTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveDictionaryTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveListTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Actions\ActionExtensionsTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveSortedDictionaryTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveSortedSetTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveSortedListTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\AndExpressionTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Events\EventTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\IntMulExpressionTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveHashSetTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\FloatSumExpressionTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Variables\ReactiveVariableTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\TimerTTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\FloatMulExpressionTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Actions\ActionTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\IntSumExpressionTests.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\CountdownTTests.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\TimerTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Variables\ReactiveVariableTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\AndExpressionTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\TimerTTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Actions\ActionExtensionsTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveArrayTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveSortedDictionaryTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\IntMulExpressionTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Expressions\FloatMulExpressionTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Collections\ReactiveSortedSetTests.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\CountdownTests.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Time\StopwatchTests.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Actions\ActionGroupTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Atomic\Elements\Tests\EditMode\Atomic.Elements.Tests.EditMode.asmdef" />

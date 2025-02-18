@@ -1,15 +1,35 @@
-﻿using Entities;
+﻿using System;
+using Entities;
+using Zenject;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class  PushController
+    public sealed class  PushController : IInitializable, IDisposable
     {
         private readonly LevelMap _levelMap;
+        private readonly IEventBus _eventBus;
 
-        public PushController(LevelMap levelMap)
+        public PushController(LevelMap levelMap, IEventBus evetBus)
         {
             _levelMap = levelMap;
+            _eventBus = evetBus;
         }
+        public void Dispose()
+        {
+            _eventBus.Unsubsctibe<AttackEvent>(Push);
+        }
+
+        public void Initialize()
+        {
+           _eventBus.Subsctibe<AttackEvent>(Push);
+        }
+
+        private void Push(AttackEvent e)
+        {
+            Push(e.Attacker, e.Target);
+        }
+
+
 
         private void Push(IEntity player, IEntity entity) 
         { 
@@ -22,12 +42,12 @@ namespace Lessons.Lesson19_EventBus
             if (_levelMap.Entities.HasEntity(targetPosition))
             {
                 _levelMap.Entities.TryGetEntity(targetPosition, out var entity2);
-                //EventBus.RaiseEvent(new DealDamageEvent(entity2, 1));
-                //EventBus.RaiseEvent(new DealDamageEvent(entity, 1));
+                _eventBus.RaiseEvent(new DealDamageEvent(entity2, 1));
+                _eventBus.RaiseEvent(new DealDamageEvent(entity, 1));
                 return;
             }
 
-            //EventBus.RaiseEvent(new MoveEvent(entity, direction));
+            _eventBus.RaiseEvent(new MoveEvent(entity, direction));
         }
     }
 

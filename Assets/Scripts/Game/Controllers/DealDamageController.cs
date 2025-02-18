@@ -1,17 +1,34 @@
+using System;
 using Entities;
+using UnityEditor;
+using Zenject;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class DealDamageController
+    public sealed class DealDamageController : IInitializable, IDisposable
     {
-        private readonly DestroyController _destroyController;
+        private IEventBus _eventBus;
         
-        public DealDamageController(DestroyController destroyController)
+        public DealDamageController(IEventBus eventBus)
         {
-            _destroyController = destroyController;
+            _eventBus = eventBus;
         }
-        
-        public void DealDamage(IEntity entity, int damage)
+        public void Dispose()
+        {
+            _eventBus.Unsubsctibe<DealDamageEvent>(DealDamage);
+        }
+
+        public void Initialize()
+        {
+            _eventBus.Subsctibe<DealDamageEvent>(DealDamage);
+        }
+
+        private void DealDamage(DealDamageEvent e)
+        {
+            DealDamage(e.Target, e.Strength);
+        }
+
+        private void DealDamage(IEntity entity, int damage)
         {
             if (!entity.TryGet(out HitPointsComponent hitPoints))
             {
@@ -22,8 +39,18 @@ namespace Lessons.Lesson19_EventBus
 
             if (hitPoints.Value <= 0)
             {
-                _destroyController.Destroy(entity);
+                _eventBus.RaiseEvent(new DestroyEvent(entity));
             }
+        }
+    }
+
+    public class DestroyEvent
+    {
+        public readonly IEntity Entity;
+
+        public DestroyEvent(IEntity entity)
+        {
+            Entity = entity;
         }
     }
 }

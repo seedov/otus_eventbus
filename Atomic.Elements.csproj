@@ -56,79 +56,79 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\Expression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Interfaces\IReactiveList.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveFloat.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveProxyVariable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\IntSumExpression.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Utils\EqualityComparer.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveDictionary.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\ActionGroup.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\float3Reactive.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Events\IEvent.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\IntMulExpression.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IPausable.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Timer.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Util\Delegates.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Interfaces\IReactiveDictionary.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Events\Event.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\ProxyAction.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Countdown.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Cycle.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveQuaternion.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Interfaces\IReactiveList.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\DebugLogAction.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IDurationable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\ITickable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Interfaces\IReactiveSet.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\SceneActionRef.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IEndable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveHashSet.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\Extensions.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\AndExpression.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\quaternionReactive.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\Extensions.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\Extensions.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveVector3.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveBool.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\Extensions.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\IValue.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Setters\ISetter.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\SceneActionBase.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Extensions.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\SceneAction.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Setters\Setter.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\IPredicate.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\Const.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveArray.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\OrExpression.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Abstractions\ExpressionBase.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reference\Reference.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reactive\Reactive.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\ITimeable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Utils\DelegateUtils.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\Expression.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IPlayable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveSortedDictionary.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\IFunction.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ProxyVariable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Abstractions\IExpression.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\ProxyFunction.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\IReactiveValue.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveSortedSet.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\FloatSumExpression.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\FloatMulExpression.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\IVariable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Stopwatch.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveVariable.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveList.cs" />
+    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IDurationable.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\IReactiveVariable.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveSortedList.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\IAction.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Setters\ISetter.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reactive\IReactive.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reactive\Subscription.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\SceneActionBase.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IPlayable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Extensions.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\ITickable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveFloat.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveProxyVariable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\SceneAction.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\FloatSumExpression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Interfaces\IReactiveSet.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\FloatMulExpression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\IntSumExpression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Interfaces\IReactiveDictionary.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveSortedDictionary.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Setters\Setter.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\IVariable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\IFunction.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\SceneActionRef.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ProxyVariable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Utils\EqualityComparer.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveDictionary.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IProgressable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reference\Reference.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Abstractions\IExpression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reactive\Reactive.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveVector2.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\IEndable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\ActionGroup.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Events\Event.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveHashSet.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\ProxyFunction.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\ProxyAction.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\Extensions.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\IPredicate.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\Const.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\float3Reactive.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\AndExpression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Stopwatch.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveInt.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\quaternionReactive.cs" />
     <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Reactive\Extensions.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Functions\Extensions.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\IReactiveValue.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveVariable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveList.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Interfaces\ITimeable.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Values\Extensions.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Events\IEvent.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Expressions\Implementations\IntMulExpression.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveVector3.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Countdown.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveBool.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Time\Implementations\Cycle.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveSortedSet.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Variables\ReactiveQuaternion.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Actions\Extensions.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Utils\DelegateUtils.cs" />
-    <Compile Include="Assets\Plugins\Atomic\Elements\Scripts\Collections\Implementations\ReactiveArray.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Atomic\Elements\Scripts\Atomic.Elements.asmdef" />
@@ -383,8 +383,14 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
@@ -404,6 +410,9 @@
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
@@ -419,26 +428,17 @@
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject-usage">
-      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

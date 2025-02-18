@@ -1,17 +1,36 @@
+using System;
 using Entities;
+using Zenject;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class DestroyController
+    public sealed class DestroyController : IInitializable, IDisposable
     {
         private readonly LevelMap _levelMap;
+        private readonly IEventBus _eventBus;
 
-        public DestroyController(LevelMap levelMap)
+        public DestroyController(LevelMap levelMap, IEventBus eventBus)
         {
             _levelMap = levelMap;
+            _eventBus = eventBus;
         }
-        
-        public void Destroy(IEntity entity)
+
+        public void Dispose()
+        {
+            _eventBus.Unsubsctibe<DestroyEvent>(Destroy);
+        }
+
+        public void Initialize()
+        {
+            _eventBus.Subsctibe<DestroyEvent>(Destroy);
+        }
+
+        private void Destroy(DestroyEvent e)
+        {
+            Destroy(e.Entity);
+        }
+
+        private void Destroy(IEntity entity)
         {
             if (entity.TryGet(out DeathComponent deathComponent))
             {
