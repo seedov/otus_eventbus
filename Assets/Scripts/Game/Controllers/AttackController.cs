@@ -15,7 +15,8 @@ namespace Lessons.Lesson19_EventBus
         {
             if (entity.TryGet(out StatsComponent stats))
             {
-                _dealDamageController.DealDamage(target, stats.Strength);
+                var damage = stats.Strength;
+                _dealDamageController.DealDamage(target, damage);
             }
         }
     }

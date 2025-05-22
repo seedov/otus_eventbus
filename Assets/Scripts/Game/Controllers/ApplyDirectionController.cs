@@ -28,7 +28,9 @@ namespace Lessons.Lesson19_EventBus
 
             if (_levelMap.Entities.HasEntity(targetCoordinates))
             {
-                _attackController.Attack(entity, _levelMap.Entities.GetEntity(targetCoordinates));
+                var attacker = entity;
+                var target = _levelMap.Entities.GetEntity(targetCoordinates);
+                _attackController.Attack(attacker, target);
                 return;
             }
             
