@@ -12,6 +12,12 @@ namespace Lessons.Lesson19_EventBus
             ConfigureControllers();
 
             Container.Bind<EntityInstaller>().FromComponentInHierarchy().AsSingle();
+            
+            ConfigureEventBus();
+        }
+
+        private void ConfigureEventBus()
+        {
             Container.Bind<IEventBus>().To<ZenjectEventBus>().AsSingle();
 
             SignalBusInstaller.Install(Container);
@@ -20,6 +26,7 @@ namespace Lessons.Lesson19_EventBus
             Container.DeclareSignal<DealDamageEvent>();
             Container.DeclareSignal<DestroyEvent>();
             Container.DeclareSignal<MoveEvent>();
+            Container.DeclareSignal<ApplyDirectionEvent>();
         }
 
         private void ConfigureLevel()

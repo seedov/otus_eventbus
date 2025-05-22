@@ -2,7 +2,6 @@
 
 namespace Lessons.Lesson19_EventBus
 {
-
     public class AttackEvent
     {
         public readonly IEntity Attacker;

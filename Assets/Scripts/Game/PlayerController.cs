@@ -1,30 +1,32 @@
 ﻿using System;
 using Entities;
 using UnityEngine;
+using UnityEngine.Windows;
 using Zenject;
 
 namespace Lessons.Lesson19_EventBus
 {
     public sealed class PlayerController : IInitializable, IDisposable
     {
-        private readonly KeyboardInput _input;
+        private readonly IEventBus _eventBus;
         private readonly IEntity _player;
 
-        private readonly ApplyDirectionController _applyDirectionController;
+        private readonly KeyboardInput _input;
 
         public PlayerController(
+            IEventBus eventBus, 
             KeyboardInput input, 
-            ApplyDirectionController applyDirectionController, 
             PlayerService playerService)
         {
-            _input = input;
+            _eventBus = eventBus;
             _player = playerService.Player;
-            
-            _applyDirectionController = applyDirectionController;
+
+            _input = input;
         }
         
         void IInitializable.Initialize()
         {
+
             _input.MovePerformed += OnMovePreformed;
         }
 
@@ -35,7 +37,7 @@ namespace Lessons.Lesson19_EventBus
 
         private void OnMovePreformed(Vector2Int direction)
         {
-            _applyDirectionController.ApplyDirection(_player, direction);
+            _eventBus.RaiseEvent(new ApplyDirectionEvent(_player, direction));
         }
     }
 }

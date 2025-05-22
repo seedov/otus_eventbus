@@ -1,10 +1,11 @@
+using System;
 using Entities;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class ApplyDirectionController
+    public sealed class ApplyDirectionController: IDisposable
     {
         private readonly LevelMap _levelMap;
         private readonly IEventBus _eventBus;
@@ -16,6 +17,12 @@ namespace Lessons.Lesson19_EventBus
         {
             _levelMap = levelMap;
             _eventBus = eventBus;
+            _eventBus.Subscribe<ApplyDirectionEvent>(ProcessApplyDirectionEvent);
+        }
+
+        private void ProcessApplyDirectionEvent(ApplyDirectionEvent evt)
+        {
+            ApplyDirection(evt.Entity, evt.Direction);
         }
 
         public void ApplyDirection(IEntity entity, Vector2Int direction)
@@ -38,6 +45,11 @@ namespace Lessons.Lesson19_EventBus
             {
                 _eventBus.RaiseEvent(new MoveEvent(entity, direction));
             }
+        }
+
+        public void Dispose()
+        {
+            _eventBus.Unubscribe<ApplyDirectionEvent>(ProcessApplyDirectionEvent);
         }
     }
 }
