@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Entities\Common\Components\StatsComponent.cs" />
+    <Compile Include="Assets\Scripts\Game\Events\AttackEvent.cs" />
+    <Compile Include="Assets\Scripts\Game\Events\DealDamageEvent.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Components\TransformComponent.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\EnemyModel.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\UI\TextWidgetHitPointsAdapter.cs" />
@@ -74,14 +76,18 @@
     <Compile Include="Assets\Scripts\Level\EntityMap.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Components\CoordinatesComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\AttackController.cs" />
+    <Compile Include="Assets\Scripts\Game\Controllers\PushController.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Components\DestroyComponent.cs" />
+    <Compile Include="Assets\Scripts\Game\Events\MoveEvent.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\EnemyEntity.cs" />
+    <Compile Include="Assets\Scripts\Game\EventBus\EventBus.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Components\DeathComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Services\PlayerService.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\DestroyController.cs" />
     <Compile Include="Assets\Scripts\Level\TileMap.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Model\Life.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Model\Position.cs" />
+    <Compile Include="Assets\Scripts\Game\Events\DestroyEvent.cs" />
     <Compile Include="Assets\Scripts\Entities\Common\Components\PositionComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\DealDamageController.cs" />
     <Compile Include="Assets\Scripts\Entities\Player\PlayerEntity.cs" />

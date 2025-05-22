@@ -1,26 +1,23 @@
 using Entities;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Lessons.Lesson19_EventBus
 {
     public sealed class ApplyDirectionController
     {
         private readonly LevelMap _levelMap;
+        private readonly IEventBus _eventBus;
         
-        private readonly AttackController _attackController;
-        private readonly MoveController _moveController;
 
         public ApplyDirectionController(
-            LevelMap levelMap, 
-            AttackController attackController, 
-            MoveController moveController)
+            LevelMap levelMap,
+            IEventBus eventBus)
         {
             _levelMap = levelMap;
-
-            _attackController = attackController;
-            _moveController = moveController;
+            _eventBus = eventBus;
         }
-        
+
         public void ApplyDirection(IEntity entity, Vector2Int direction)
         {
             var coordinates = entity.Get<CoordinatesComponent>();
@@ -30,13 +27,16 @@ namespace Lessons.Lesson19_EventBus
             {
                 var attacker = entity;
                 var target = _levelMap.Entities.GetEntity(targetCoordinates);
-                _attackController.Attack(attacker, target);
+
+                _eventBus.RaiseEvent(new AttackEvent(attacker, target));
+
+                
                 return;
             }
             
             if (_levelMap.Tiles.IsWalkable(targetCoordinates))
             {
-                _moveController.Move(entity, direction);
+                _eventBus.RaiseEvent(new MoveEvent(entity, direction));
             }
         }
     }

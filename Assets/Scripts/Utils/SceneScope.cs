@@ -12,6 +12,14 @@ namespace Lessons.Lesson19_EventBus
             ConfigureControllers();
 
             Container.Bind<EntityInstaller>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<IEventBus>().To<ZenjectEventBus>().AsSingle();
+
+            SignalBusInstaller.Install(Container);
+
+            Container.DeclareSignal<AttackEvent>();
+            Container.DeclareSignal<DealDamageEvent>();
+            Container.DeclareSignal<DestroyEvent>();
+            Container.DeclareSignal<MoveEvent>();
         }
 
         private void ConfigureLevel()
@@ -30,11 +38,12 @@ namespace Lessons.Lesson19_EventBus
 
         private void ConfigureControllers()
         {
-            Container.Bind<ApplyDirectionController>().AsSingle();
-            Container.Bind<AttackController>().AsSingle();
-            Container.Bind<DealDamageController>().AsSingle();
-            Container.Bind<DestroyController>().AsSingle();
-            Container.Bind<MoveController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ApplyDirectionController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<AttackController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<DealDamageController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<DestroyController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<MoveController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<PushController>().AsSingle().NonLazy();
         }
     }
 }

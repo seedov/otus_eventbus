@@ -1,22 +1,35 @@
+using System;
 using Entities;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class AttackController
+    public sealed class AttackController : IDisposable
     {
-        private readonly DealDamageController _dealDamageController;
+        private readonly IEventBus _eventBus;
 
-        public AttackController(DealDamageController dealDamageController)
+        public AttackController( IEventBus eventBus)
         {
-            _dealDamageController = dealDamageController;
+            _eventBus = eventBus;
+            _eventBus.Subscribe<AttackEvent>(Attack);
         }
-        
-        public void Attack(IEntity entity, IEntity target)
+
+        public void Dispose()
+        {
+            _eventBus.Unubscribe<AttackEvent>(Attack);
+        }
+
+        private void Attack(AttackEvent evt)
+        {
+            Attack(evt.Attacker, evt.Target);
+        }
+
+        private void Attack(IEntity entity, IEntity target)
         {
             if (entity.TryGet(out StatsComponent stats))
             {
                 var damage = stats.Strength;
-                _dealDamageController.DealDamage(target, damage);
+
+                _eventBus.RaiseEvent(new DealDamageEvent(target, damage));
             }
         }
     }

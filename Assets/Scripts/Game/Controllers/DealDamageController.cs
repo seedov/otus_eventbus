@@ -1,17 +1,28 @@
+using System;
 using Entities;
 
 namespace Lessons.Lesson19_EventBus
 {
-    public sealed class DealDamageController
+    public sealed class DealDamageController : IDisposable
     {
-        private readonly DestroyController _destroyController;
-        
-        public DealDamageController(DestroyController destroyController)
+
+        private readonly IEventBus _eventBus;
+
+        public DealDamageController(IEventBus eventBus)
         {
-            _destroyController = destroyController;
+            _eventBus = eventBus;
+            _eventBus.Subscribe<DealDamageEvent>(ProcessDealDamageEvent);
         }
-        
-        public void DealDamage(IEntity entity, int damage)
+        public void Dispose()
+        {
+            _eventBus.Unubscribe<DealDamageEvent>(ProcessDealDamageEvent);
+        }
+
+        private void ProcessDealDamageEvent(DealDamageEvent evt)
+        {
+            DealDamage(evt.Entity, evt.Damage);
+        }
+        private void DealDamage(IEntity entity, int damage)
         {
             if (!entity.TryGet(out HitPointsComponent hitPoints))
             {
@@ -22,8 +33,10 @@ namespace Lessons.Lesson19_EventBus
 
             if (hitPoints.Value <= 0)
             {
-                _destroyController.Destroy(entity);
+                _eventBus.RaiseEvent(new DestroyEvent(entity));
             }
         }
+
+  
     }
 }

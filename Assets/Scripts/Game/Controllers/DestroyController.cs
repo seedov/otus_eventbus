@@ -1,3 +1,4 @@
+using System;
 using Entities;
 
 namespace Lessons.Lesson19_EventBus
@@ -5,13 +6,21 @@ namespace Lessons.Lesson19_EventBus
     public sealed class DestroyController
     {
         private readonly LevelMap _levelMap;
+        private readonly IEventBus _eventBus;
 
-        public DestroyController(LevelMap levelMap)
+        public DestroyController(LevelMap levelMap, IEventBus eventBus)
         {
             _levelMap = levelMap;
+            _eventBus = eventBus;
+            _eventBus.Subscribe<DestroyEvent>(ProcessDestroyEvent);
         }
-        
-        public void Destroy(IEntity entity)
+
+        private void ProcessDestroyEvent(DestroyEvent evt)
+        {
+            Destroy(evt.Entity);
+        }
+
+        private void Destroy(IEntity entity)
         {
             if (entity.TryGet(out DeathComponent deathComponent))
             {
