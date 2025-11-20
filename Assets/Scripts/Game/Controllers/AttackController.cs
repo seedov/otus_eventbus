@@ -15,7 +15,7 @@ namespace Lessons.Lesson19_EventBus
 
         public void Dispose()
         {
-            _eventBus.Unubscribe<AttackEvent>(Attack);
+            _eventBus.Unsubscribe<AttackEvent>(Attack);
         }
 
         private void Attack(AttackEvent evt)

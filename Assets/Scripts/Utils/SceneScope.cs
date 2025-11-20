@@ -14,6 +14,13 @@ namespace Lessons.Lesson19_EventBus
             Container.Bind<EntityInstaller>().FromComponentInHierarchy().AsSingle();
             
             ConfigureEventBus();
+
+            Container.Bind<TurnPipeline>().FromNew().AsSingle().NonLazy();
+            Container.Bind<VisualPipeline>().FromNew().AsSingle().NonLazy();
+
+            Container.Bind<WaitForInputTask>().FromNew().AsSingle();
+            Container.Bind<MoveEntityVisualTask>().FromNew().AsSingle();
+            Container.Bind<DestroyEntityVisualTask>().FromNew().AsSingle();
         }
 
         private void ConfigureEventBus()
@@ -40,7 +47,7 @@ namespace Lessons.Lesson19_EventBus
         {
             Container.Bind<KeyboardInput>().FromComponentInHierarchy().AsSingle();
             Container.Bind<PlayerService>().FromComponentInHierarchy().AsSingle();
-            Container.BindInterfacesAndSelfTo<PlayerController>().AsSingle();
+ //           Container.BindInterfacesAndSelfTo<PlayerController>().AsSingle();
         }
 
         private void ConfigureControllers()
@@ -51,6 +58,9 @@ namespace Lessons.Lesson19_EventBus
             Container.BindInterfacesAndSelfTo<DestroyController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<MoveController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<PushController>().AsSingle().NonLazy();
+
+            Container.BindInterfacesAndSelfTo<VisualMoveController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<DestroyVisualController>().AsSingle().NonLazy();
         }
     }
 }

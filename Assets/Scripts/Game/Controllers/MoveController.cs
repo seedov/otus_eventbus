@@ -30,8 +30,8 @@ namespace Lessons.Lesson19_EventBus
             _levelMap.Entities.SetEntity(targetCoordinates, entity);
             coordinates.Value = targetCoordinates;
 
-            var position = entity.Get<PositionComponent>();
-            position.Value = _levelMap.Tiles.CoordinatesToPosition(targetCoordinates);
+            //var position = entity.Get<PositionComponent>();
+            //position.Value = _levelMap.Tiles.CoordinatesToPosition(targetCoordinates);
         }
     }
 }

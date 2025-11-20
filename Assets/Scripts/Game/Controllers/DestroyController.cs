@@ -1,4 +1,3 @@
-using System;
 using Entities;
 
 namespace Lessons.Lesson19_EventBus
@@ -30,10 +29,7 @@ namespace Lessons.Lesson19_EventBus
             var coordinates = entity.Get<CoordinatesComponent>();
             _levelMap.Entities.RemoveEntity(coordinates.Value);
             
-            if (entity.TryGet(out DestroyComponent destroyComponent))
-            {
-                destroyComponent.Destroy();
-            }
+
         }
     }
 }

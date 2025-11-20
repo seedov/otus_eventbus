@@ -15,7 +15,7 @@ namespace Lessons.Lesson19_EventBus
         }
         public void Dispose()
         {
-            _eventBus.Unubscribe<DealDamageEvent>(ProcessDealDamageEvent);
+            _eventBus.Unsubscribe<DealDamageEvent>(ProcessDealDamageEvent);
         }
 
         private void ProcessDealDamageEvent(DealDamageEvent evt)

@@ -7,7 +7,7 @@ using Zenject;
 public interface IEventBus
 {
     void Subscribe<T>(Action<T> handler);
-    void Unubscribe<T>(Action<T> handler);
+    void Unsubscribe<T>(Action<T> handler);
     void RaiseEvent<T>(T evt);
 }
 
@@ -30,7 +30,7 @@ public class ZenjectEventBus : IEventBus
         _signalBus.Subscribe(handler);
     }
 
-    public void Unubscribe<T>(Action<T> handler)
+    public void Unsubscribe<T>(Action<T> handler)
     {
         _signalBus.Unsubscribe(handler);
     }
@@ -49,7 +49,7 @@ public class EventBus : IEventBus
         _handlers[type].Add(handler);
     }
 
-    public void Unubscribe<T>(Action<T> handler)
+    public void Unsubscribe<T>(Action<T> handler)
     {
         var type = typeof(T);
         if (_handlers.ContainsKey(type))

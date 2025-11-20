@@ -49,7 +49,7 @@ namespace Lessons.Lesson19_EventBus
 
         public void Dispose()
         {
-            _eventBus.Unubscribe<ApplyDirectionEvent>(ProcessApplyDirectionEvent);
+            _eventBus.Unsubscribe<ApplyDirectionEvent>(ProcessApplyDirectionEvent);
         }
     }
 }
